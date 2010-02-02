@@ -1,4 +1,4 @@
-# Release information
+
 
 = Release 1.1 =
   * Upgraded to mootools v1.2.4
