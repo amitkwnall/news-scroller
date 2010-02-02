@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script language="javascript" src="mootools/mootools.svn.js" type="text/javascript"></script>
+
+<style type="text/css">
+body {
+	font-family:"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+}
+#NewsTicker{
+	border:solid 1px #cccccc;
+	background:#eaf5e0;
+	width:300px;
+	height:364px;
+	margin:0 auto;
+}
+	#NewsTicker h1{
+		padding:6px; margin:0; border:0;
+		background:#dfe9d5;
+		color:#000000;
+		font-size:11px;
+		font-weight:bold;
+	}
+	#NewsVertical {
+	width: 300px;
+	height: 300px;
+	display: block;
+	overflow: hidden;
+	position: relative;
+	}
+	#controller{
+	padding:6px;
+	font-size:11px;
+	color:#666;
+	}
+	#play_scroll_cont{display:none;}
+/* --------------- */
+/* Ticker Vertical */
+	#TickerVertical {
+		width: 300px;
+		height: 330px;
+		display: block;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	#TickerVertical li {
+		display: block;
+		width: 288px;
+		color: #333333;
+		text-align: left;
+		font-size: 11px;
+		margin: 0;
+		padding: 6px;
+		float: left;
+	}
+		#TickerVertical li .NewsTitle{
+			display: block;
+			color: #000000;
+			font-size: 12px;
+			font-weight:bold;
+			margin-bottom:6px;
+		}
+		#TickerVertical li .NewsTitle a:link,
+		#TickerVertical li .NewsTitle a:Visited {
+			display: block;
+			color: #000000;
+			font-size: 12px;
+			font-weight:bold;
+			margin-bottom:6px;
+			text-decoration:none;
+		}
+		#TickerVertical li .NewsTitle a:hover {
+			text-decoration:underline;
+		}
+		
+		#TickerVertical li .NewsImg{
+			float:left;
+			margin-right:10px;
+		}
+		#TickerVertical li .NewsFooter{
+			display: block;
+			color: #000000;
+			font-size: 10px;
+			margin:6px 0 14px 0;
+		}
+</style>
+</head>
+<body>
+<div id="NewsTicker">
+  <h1>What's news?</h1>
+  <div id="controller">
+    <div id="stop_scroll_cont"><a id="stop_scroll"><img src="pic/stop.png" width="14" height="14" border="0" align="absmiddle" /></a> Stop news scroll</div>
+    <div id="play_scroll_cont"><a id="play_scroll"><img src="pic/play.png" width="14" height="14" border="0" align="absmiddle"/></a> Play news scroll</div>
+    </div>
+<div id="NewsVertical">
+	  <ul id="TickerVertical">
+        <li>
+            <img src="img/U0000.png" border="0" class="NewsImg"/>
+            <span class="NewsTitle">
+            <a href="http://woork.blogspot.com/2008/07/tips-to-design-your-site-for-mobile.html">Tips to design your site for mobile devices</a>
+            </span>
+            Some day ago my friend Lucas asked to me some suggest to design a mobile version of his blog. 
+            So, in this post I want to illustrate some simple tips about how to develop a mobile version of 
+            your site.<span class="NewsFooter"><strong>Published July 25</strong> - 324 comments</span>        </li>
+        <li>
+        	<img src="img/U0001.png" border="0" class="NewsImg"/>
+            <span class="NewsTitle">
+            <a href="http://woork.blogspot.com/2008/07/useful-tips-to-enrich-your-html-forms.html">Useful tips to enrich your HTML Forms</a>
+            </span>
+           In this post I want to share some simple tips useful to enrich your forms with various elements 
+           such as suggest messages, autosuggest feature, simple check during data input and how to 
+           show hidden fields selecting a radio element option.
+           <span class="NewsFooter"><strong>Published July 22</strong> - 265 comments</span>
+        </li>
+        <li>
+            <img src="img/U0002.png" border="0" class="NewsImg"/>
+            <span class="NewsTitle">
+            <a href="http://woork.blogspot.com/2008/07/navigation-bar-with-tabs-using-css.html">Navigation bar with tabs using CSS and sliding doors effect</a>
+            </span>
+          My friend William asked to me to design for his project a simple navigation bar with 
+          tabs using CSS. I prepared for him this navbar (with status effects active, hover, link):
+           <span class="NewsFooter"><strong>Published July 18</strong> - 342 comments</span>
+        </li>
+        <li>
+            <img src="img/U0003.png" border="0" class="NewsImg"/>
+            <span class="NewsTitle"><a href="http://woork.blogspot.com/2008/06/form-elements-design-using-css-and-list.html">FORM elements design using CSS and list (ul and dl)</a></span>
+          In this post I would show another way to design FORM using list elements.
+          In any case, if you want to use pure CSS code instead of HTML table to design your FORM 
+          I think this is a good way to do it.
+          <span class="NewsFooter"><strong>Published July 18</strong> - 342 comments</span>
+        </li>
+    </ul>
+    </div>
+</div>
+		<script language="javascript" type="text/javascript" src="newsticker.js">
+		</script>
+</body>
+</html>
