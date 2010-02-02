@@ -3,7 +3,7 @@ CHANGES.txt
 
 Release 1.1
 Removed mootools/moostick.js since it is not used.
-
+Upgraded to mootools v 1.2.4
 
 
 Release 1.0 -- same as from the original blog postings by 

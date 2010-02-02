@@ -15,14 +15,14 @@ var Ticker = new Class({
 		var w = 0;
 		var h = 0;
 		if(this.options.direction.toLowerCase()=='horizontal') {
-			h = this.el.getSize().size.y;
+			h = this.el.getSize().y;
 				this.items.each(function(li,index) {
-				w += li.getSize().size.x;
+				w += li.getSize().x;
 			});
 	} else {
-			w = this.el.getSize().size.x;
+			w = this.el.getSize().x;
 			this.items.each(function(li,index) {
-				h += li.getSize().size.y;
+				h += li.getSize().y;
 			});
 		}
 		this.el.setStyles({
@@ -32,7 +32,7 @@ var Ticker = new Class({
 			width: w,
 				height: h
 		});
-		this.fx = new Fx.Styles(this.el,{duration:this.options.speed,onComplete:function() {
+		this.fx = new Fx.Morph(this.el,{duration:this.options.speed,onComplete:function() {
 			var i = (this.current==0)?this.items.length:this.current;
 			this.items[i-1].injectInside(this.el);
 			this.el.setStyles({
@@ -57,7 +57,7 @@ var Ticker = new Class({
 		this.current++;
 		if (this.current >= this.items.length) this.current = 0;
 		var pos = this.items[this.current];
-		this.fx.start({
+		this.fx.start({         // moves the el -- scrolls it
 			top: -pos.offsetTop,
 			left: -pos.offsetLeft
 		});
