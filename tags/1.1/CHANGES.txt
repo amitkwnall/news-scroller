@@ -1,0 +1,25 @@
+CHANGES.txt
+
+
+Release 1.1
+Removed mootools/moostick.js since it is not used.
+Upgraded to mootools v 1.2.4
+
+
+Release 1.0 -- same as from the original blog postings by 
+Antonio Lupetti--
+http://woork.blogspot.com/2008/07/fantastic-news-ticker-newsvine-like.html
+http://woork.blogspot.com/2008/10/automatic-news-ticker-with-vertical.html
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+SVN notes
+To make a release
+a) Commit changes. Note new ver number
+b) Copy the trunk to tags --
+
+svn copy https://news-scroller.googlecode.com/svn/trunk/ https://news-scroller.googlecode.com/svn/tags/1.0 -r 4 -m 'Release 1.0' --username larrykluger
