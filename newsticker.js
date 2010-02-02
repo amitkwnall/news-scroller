@@ -1,4 +1,4 @@
-﻿var Ticker = new Class({
+var Ticker = new Class({
 	setOptions: function(options) {
 		this.options = Object.extend({
 			speed: 1500,
