@@ -22,4 +22,4 @@ To make a release
 a) Commit changes. Note new ver number
 b) Copy the trunk to tags --
 
-svn copy https://news-scroller.googlecode.com/svn/trunk/ https://news-scroller.googlecode.com/svn/tags/1.0 -r 4 -m 'Release 1.0' --username larrykluger
+svn copy https://news-scroller.googlecode.com/svn/trunk/ https://news-scroller.googlecode.com/svn/tags/1.1 -r 7 -m 'Release 1.1' --username larrykluger
