@@ -7,4 +7,6 @@
 
 svn propdel svn:executable           index.html
 svn propset svn:mime-type text/html  index.html
-                                     
+
+svn propdel svn:executable           mootools_1.1x_compatible/index.html
+svn propset svn:mime-type text/html  mootools_1.1x_compatible/index.html                                    
