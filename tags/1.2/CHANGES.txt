@@ -1,0 +1,41 @@
+CHANGES.txt
+
+Release 1.2
+Renamed object NewsTicker (was Ticker). This is a breaking change,
+you will need to update your files. Why: Ticker is too generic and 
+prone to name clashes.
+Fixed bug of scrolling immediately upon startup
+Added pausing of scroll when mouse is in the ticker area.
+Added option of no_mouse_pause. Default is false (mouse causes pause).
+Smaller variable foot print in JS.
+Commented newsticker file.
+Made newsticker file into a proper library file--moved the invocation
+to the sample index file.
+Changed example to load JS at end as recommended by 
+  http://developer.yahoo.com/performance/rules.html
+Tested with Google api service--using them to serve mootools.
+Tested with Win IE 7, Chrome, FF, Safari
+Added license.
+
+Release 1.1
+Removed mootools/moostick.js since it is not used.
+Upgraded to mootools v 1.2.4
+
+
+Release 1.0 -- same as from the original blog postings by 
+Antonio Lupetti--
+http://woork.blogspot.com/2008/07/fantastic-news-ticker-newsvine-like.html
+http://woork.blogspot.com/2008/10/automatic-news-ticker-with-vertical.html
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+SVN notes
+To make a release
+a) Commit changes. Note new ver number
+b) Copy the trunk to tags --
+
+svn copy https://news-scroller.googlecode.com/svn/trunk/ https://news-scroller.googlecode.com/svn/tags/1.1 -r 7 -m 'Release 1.1' --username larrykluger
