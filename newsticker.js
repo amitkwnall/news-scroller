@@ -1,19 +1,38 @@
-var Ticker = new Class({
-	 setOptions: function(options) {
-	 	  this.options = Object.extend({
-	 	  	 speed: 2500,  // defaults
-	 	  	 delay: 150, //5000,
-	 	  	 direction: 'vertical',
-	 	  	 onComplete: Class.empty,
-	 	  	 onStart: Class.empty
-	 	  }, options || {});
-	 },
+// Copyright (c) 2010 Larry Kluger
+// Based on sw by Antonio Lupetti--
+// http://woork.blogspot.com/2008/07/fantastic-news-ticker-newsvine-like.html 
+// 
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+// 
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+// 
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+
+var NewsTicker = new Class({
+	 options: {}, // set by setOptions
+	 mytimer: null, 
 	 //
 	 //  initialize
 	 //
 	 initialize: function(el,options){
 	 	  this.setOptions(options);
 	 	  this.el = $(el); // the ticker el (which changes) within the ticker container
+	 	  if (!this.options.no_mouse_pause) {
+	 	     this.el.addEvent('mouseenter', function(){this.pause();}.bind(this));
+	 	     this.el.addEvent('mouseleave', function(){this.resume();}.bind(this));	 	     
+	 	  };
 	 	  this.items = this.el.getElements('li'); // array of the items to be scrolled
 	 	  
 	 	  var w = 0, // total width (visible and invisible) 
@@ -44,7 +63,20 @@ var Ticker = new Class({
 	 	  
 	 	  this.current = 0; // initialize
 	 	  
-	 	  this.next(); // scroll to next item
+	 	  this.delay_then_next(); // start 'er up!
+	 },
+	 
+	 //
+	 // setOptions
+	 //
+	 setOptions: function(options) {
+	    // set options, manage defaults and enforce requirements
+	 	           this.options.speed = options.speed || 500;
+	 	           this.options.delay = options.delay || 5000;
+	 	       this.options.direction = options.direction || 'vertical';
+	 	  this.options.no_mouse_pause = options.no_mouse_pause; // undefined will be false, which is the default
+	 	  // requirements
+	 	  if (options != null && options.delay < 150) {this.options.delay = 150;}  
 	 },
 	 
 	 //
@@ -61,16 +93,23 @@ var Ticker = new Class({
 	 	  	 left: -pos.offsetLeft
 	 	  });
 	 	  
-	 	  // call next again after waiting for effect to finish and delay time 
-	 	  mytimer = this.next.bind(this).delay(this.options.delay + this.options.speed);
+	 	  this.delay_then_next();
 	 },
-
+	 
+	 //
+	 // delay_then_next
+	 //
+	 delay_then_next: function() {
+	 	  // call next after waiting for effect to finish and delay time 
+	 	  this.mytimer = this.next.bind(this).delay(this.options.delay + this.options.speed);
+	 },	 
+	 
 	 //
 	 // pause 
 	 //
 	 pause: function() {
-	    $clear(mytimer); // stop timer
-	    mytimer = null;
+	    $clear(this.mytimer); // stop timer
+	    this.mytimer = null;
 	 },
 
 	 //
@@ -78,26 +117,6 @@ var Ticker = new Class({
 	 //
 	 resume: function() {
 	    // call next if not running
-	    if (mytimer == null) {this.next();}
+	    if (this.mytimer == null) {this.next();}
 	 }
-});
-
-var mytimer = null;
-
-window.addEvent('domready', function() {
-   var hor = new Ticker('TickerVertical', {
-      speed : 10000, delay : 0, direction : 'vertical'});
-      
-      // was speed : 500, delay : 5000
-      
-    $('stop_scroll').addEvent('click', function() {
-		$('play_scroll_cont').style.display='block';
-		$('stop_scroll_cont').style.display='none';
-		hor.pause();
-	});
-    $('play_scroll').addEvent('click', function() {
-		$('stop_scroll_cont').style.display='block';
-		$('play_scroll_cont').style.display='none';
-		hor.resume();
-	});
 });
