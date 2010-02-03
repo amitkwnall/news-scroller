@@ -1,5 +1,5 @@
 = Release 1.2 =
-  * Renamed object NewsTicker (was Ticker). This is a breaking change, you will need to update your files. Why: Ticker is too generic and prone to name clashes.
+  * Renamed object !NewsTicker (was Ticker). This is a breaking change, you will need to update your files. Why: Ticker is too generic and prone to name clashes.
   * Fixed bug of scrolling immediately upon startup
   * Added pausing of scroll when mouse is in the ticker area.
   * Added option of no_mouse_pause. Default is false (mouse causes pause).
