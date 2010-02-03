@@ -1,0 +1,6 @@
+See http://developer.yahoo.com/yui/compressor/
+
+Usage:
+
+ java -jar build/yuicompressor-2.4.2.jar -o output_filename input_filename
+
