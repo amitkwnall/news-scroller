@@ -2,6 +2,8 @@
   * Included updated version compatible with Mootools 1.1.2.
   * Added YUI compressed versions of the !NewsTicker library.
   * Added YUI compressor to build directory
+  * [http://code.google.com/p/news-scroller/source/browse/#svn/tags/1.3 Source] 
+  * [http://news-scroller.googlecode.com/svn/tags/1.3/index.html Demo]
 
 = Release 1.2 =
   * Renamed object !NewsTicker (was Ticker). This is a breaking change, you will need to update your files. Why: Ticker is too generic and prone to name clashes.
