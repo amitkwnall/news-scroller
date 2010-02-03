@@ -8,6 +8,8 @@
   * Changed example to load JS at end as recommended by http://developer.yahoo.com/performance/rules.html
   * Tested with Google api service--using them to serve mootools.
   * Tested with Win IE 7, Chrome, FF, Safari
+  * [http://code.google.com/p/news-scroller/source/browse/#svn/tags/1.2 Source] 
+  * [http://news-scroller.googlecode.com/svn/tags/1.2/index.html Demo]
 
 = Release 1.1 =
   * Upgraded to mootools v1.2.4
